@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Geom</title>
+		<style type="text/css">
+			body
+			{
+				background-color:#FFF;
+				color:#000;
+				font-family:Helvetica, Arial;
+				font-size:12px;
+				padding:50px;
+			}
+
+			body > div
+			{
+				width:600px;
+				padding:20px 0;
+				margin-top:30px;
+			}
+
+			body > div, footer
+			{
+				border-top:1px solid #000;
+			}
+
+			footer
+			{
+				padding-top:20px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Point</h1>
+		<p><strong>Package</strong> : com.danehansen.geom <br />
+		<strong>Class</strong> : public class Point <br />
+		<strong>Inheritance</strong> : Point > Object</p>
+		<p>The Point object represents a location in a two-dimensional coordinate system, where x represents the horizontal axis and y represents the vertical axis. Mostly based on the AS3 Point class, but with some added features/useless ones removed.</p>
+		<h2>Public Properties</h2>
+		<ul>
+			<li><strong>x</strong> : Number <br />
+			The horizontal coordinate of the point.</li>
+			<li><strong>y</strong> : Number <br />
+			The vertical coordinate of the point.</li>
+		</ul>
+		<h2>Public Methods</h2>
+		<ul>
+			<li><strong>Point</strong>(x:Number = 0, y:Number = 0) <br />
+			Creates a new point.</li>
+			<li><strong>add</strong>(v:Point):Point <br />
+			Adds the coordinates of another point to the coordinates of this point to create a new point.</li>
+			<li><strong>angle</strong>():Number <br />
+			Returns the angle in radians of this point from (0,0).</li>
+			<li><strong>clone</strong>():Point <br />
+			Creates a copy of this Point object.</li>
+			<li><strong>copyFrom</strong>(sourcePoint:Point) <br />
+			Copies all of the point data from the source Point object into the calling Point object.</li>
+			<li><strong>distance</strong>(pt1:Point, pt2:Point):Number <br />
+			[static] Returns the distance between pt1 and pt2.</li>
+			<li><strong>equals</strong>(toCompare:Point):Boolean <br />
+			Determines whether two points are equal.</li>
+			<li><strong>interpolate</strong>(pt1:Point, pt2:Point, f:Number):Point <br />
+			[static] Determines a point between two specified points.</li>
+			<li><strong>intersection</strong>(aStart:Point, aEnd:Point, bStart:Point, bEnd:Point):Point <br />
+			[static] Returns a point where to traveling points intersect, or null if never.</li>
+			<li><strong>length</strong>():Number <br />
+			[read-only] Gets the length of the line segment from (0,0) to this point.</li>
+			<li><strong>normalize</strong>(thicknes:Number) <br />
+			Scales the line segment between (0,0) and the current point to a set length.</li>
+			<li><strong>offset</strong>(dx:Number, dy:Number) <br />
+			Offsets the Point object by the specified amount.</li>
+			<li><strong>polar</strong>(len:Number, angle:Number):Point <br />
+			[static] Converts a pair of polar coordinates to a Cartesian point coordinate.</li>
+			<li><strong>randomPointInCircle</strong>(center:Point, radius:Number):Point <br />
+			[static] Returns a random point within a given circle.</li>
+			<li><strong>relativePosition</strong>(evt:Event, relativeTo:Element):Point <br />
+			[static] When passed a mouse event, will return the position of the mouse relative to a chosen DOM element.</li>
+			<li><strong>setTo</strong>(xa:Number, ya:Number) <br />
+			Sets the members of Point to the specified values</li>
+			<li><strong>subtract</strong>(v:Point):Boolean <br />
+			Subtracts the coordinates of another point from the coordinates of this point to create a new point.</li>
+			<li><strong>toString</strong>():String <br />
+			Returns a string that contains the values of the x and y coordinates.</li>
+			<li><strong>deviceOrientation</strong>():Point <br />
+			Returns a point with x representing device gamma, y representing device beta, and z representing device alpha.</li>
+		</ul>
+		<h1>Rectangle</h1>
+		<p><strong>Package</strong> : com.danehansen.geom <br />
+		<strong>Class</strong> : public class Rectangle <br />
+		<strong>Inheritance</strong> : Rectangle > Object</p>
+		<p>The Rectangle object represents an object with an x, y, width, and height.</p>
+		<h2>Public Properties</h2>
+		<ul>
+			<li><strong>height</strong> : Number <br />
+			The height of the rectangle.</li>
+			<li><strong>width</strong> : Number <br />
+			The width of the rectangle.</li>
+			<li><strong>x</strong> : Number <br />
+			The x coordinate of the top-left corner of the rectangle.</li>
+			<li><strong>y</strong> : Number <br />
+			The y coordinate of the top-left corner of the rectangle.</li>
+		</ul>
+		<h2>Public Methods</h2>
+		<ul>
+			<li><strong>Rectangle</strong>(x:Number = 0, y:Number = 0, width:Number = 0, height:Number = 0) <br />
+			Creates a new rectangle.</li>
+			<li><strong>containsPoint</strong>(point:Point):Boolean <br />
+			Determines whether the specified point is contained within the rectangular region defined by this Rectangle object.</li>
+			<li><strong>corners</strong>():Array <br />
+			Returns an array of points clockwise from top-left.</li>
+			<li><strong>topLeft</strong>():Point <br />
+			Returns a point at the top left of the rectangle.</li>
+			<li><strong>topRight</strong>():Point <br />
+			Returns a point at the top right of the rectangle.</li>
+			<li><strong>bottomRight</strong>():Point <br />
+			Returns a point at the bottom right of the rectangle.</li>
+			<li><strong>bottomLeft</strong>():Point <br />
+			Returns a point at the bottom left of the rectangle.</li>
+		</ul>
+		<h1>Triangle</h1>
+			<p><strong>Package</strong> : com.danehansen.geom <br />
+			<strong>Class</strong> : public class Triangle <br />
+			<strong>Inheritance</strong> : Triangle > Object</p>
+			<p>The Triangle object represents an object with 3 points: a, b and c.</p>
+			<h2>Public Properties</h2>
+			<ul>
+				<li><strong>a</strong> : Point <br />
+				The first point of the triangle.</li>
+				<li><strong>b</strong> : Point <br />
+				The second point of the triangle.</li>
+				<li><strong>c</strong> : Point <br />
+				The third point of the triangle.</li>
+				<li><strong>corners</strong> : Array <br />
+				An array containing a, b, and c.</li>
+			</ul>
+			<h2>Public Methods</h2>
+			<ul>
+				<li><strong>Triangle</strong>(a:Point = new Point, b::Point = new Point, c:Point = new Point) <br />
+				Creates a new triangle.</li>
+				<li><strong>area</strong>():Number <br />
+				Returns the area of the triangle.</li>
+				<li><strong>bottom</strong>():Number <br />
+				Returns the bottom of the triangle.</li>
+				<li><strong>containsPoint</strong>(point:Point):Boolean <br />
+				Determines whether the specified point is contained within the triangular region defined by this Triangle object.</li>
+				<li><strong>height</strong>():Number <br />
+				Returns the height of the triangle.</li>
+				<li><strong>left</strong>():Number <br />
+				Returns the left of the triangle.</li>
+				<li><strong>right</strong>():Number <br />
+				Returns the top of the triangle.</li>
+				<li><strong>top</strong>():Number <br />
+				Returns the top of the triangle.</li>
+				<li><strong>width</strong>():Number <br />
+				Returns the width of the triangle.</li>
+			</ul>
+		<footer>author: Dane Hansen, <a href="mailto:dane@danehansen.com">dane@danehansen.com</a></footer>
+	</body>
+</html>
